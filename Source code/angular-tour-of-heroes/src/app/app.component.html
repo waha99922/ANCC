@@ -1,0 +1,18 @@
+<mat-toolbar color="primary">
+  <span>Australian National Character Checks</span>
+  <span class="example-spacer"></span>
+  <button mat-icon-button class="example-icon favorite-icon" (click)="ShowAlert()">
+    <mat-icon>help</mat-icon>
+  </button>
+</mat-toolbar>
+
+
+<div class="container">
+  <h1>User Management</h1>
+  <button routerLink="create"  mat-stroked-button color="primary">New User</button>
+  <button routerLink="read"  mat-stroked-button color="primary">View Users</button>
+</div>
+
+<router-outlet>
+  
+</router-outlet>

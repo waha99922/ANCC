@@ -1,0 +1,40 @@
+<table mat-table [dataSource]="readData.data">
+
+    <!-- Id Column -->
+    <ng-container cdkColumnDef="id">
+      <th cdk-header-cell *cdkHeaderCellDef> ID </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+  
+    <!-- Name Column -->
+    <ng-container cdkColumnDef="name">
+      <th cdk-header-cell *cdkHeaderCellDef> Name </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Email Column -->
+    <ng-container cdkColumnDef="email">
+      <th cdk-header-cell *cdkHeaderCellDef> Email </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+  
+    <!-- Mobile Column -->
+    <ng-container cdkColumnDef="mobile">
+      <th cdk-header-cell *cdkHeaderCellDef> Mobile </th>
+      <td cdk-cell *cdkCellDef="let element"> {{element.mobile}} </td>
+    </ng-container>
+
+    <!-- Edit Column -->
+    <ng-container cdkColumnDef="edit">
+        <th cdk-header-cell *cdkHeaderCellDef> Edit </th>
+        <td cdk-cel *matCellDef="let element" >
+            <button mat-flat-button color="warn" (click)="DeleteId(element.id)">Delete</button>
+            <button mat-flat-button color="accent" [routerLink]="['/create',element.id]">Update</button>
+        </td>
+    </ng-container>
+
+    //define rows and coloums
+    <tr cdk-header-row *cdkHeaderRowDef="['id', 'name', 'email', 'mobile', 'edit']"></tr>
+    <tr cdk-row *cdkRowDef="let row; columns: ['id', 'name' ,'email', 'mobile', 'edit']"></tr>
+  </table>
+  
